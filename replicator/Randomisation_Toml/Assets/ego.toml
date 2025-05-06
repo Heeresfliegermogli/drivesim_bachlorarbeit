@@ -1,0 +1,8 @@
+[Assets.EgoRand]
+objects = """
+Projects/ds2_scenarios/production/ego/SDG/Generic/generic_sedan_sdg_1cam.usda
+Projects/ds2_scenarios/production/ego/SDG/Generic/generic_sedan_sdg_1lidar_5radar.usda
+Projects/ds2_scenarios/production/ego/SDG/Generic/generic_sedan_sdg_1lidar.usda
+Projects/ds2_scenarios/production/ego/SDG/Generic/generic_sedan_sdg_4cam.usda
+Projects/ds2_scenarios/production/ego/SDG/Generic/generic_sedan_sdg_8cam.usda
+"""

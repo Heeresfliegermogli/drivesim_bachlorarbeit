@@ -1,0 +1,80 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "road_signs.toml",
+    "static_traffic_vehicles.toml",
+    "static_public_vehicles.toml",
+    "cones.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = true
+
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+pop_name='ego'
+asset_file='ego.toml'
+asset_sel_type='index'
+asset_sel=[0]
+
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='traffic_cones'
+asset_file='cones.toml'
+asset_sel_type='range'
+asset_sel=[0,5]
+
+[[Events.setup]]
+type= 'VehicleRandStat'
+func= 'setup'
+pop_name='traffic_vehicles'
+asset_file='static_traffic_vehicles.toml'
+asset_sel_type='index'
+asset_sel=[1,2,3,4]
+
+[[Events.setup]]
+type='SignRand'
+func='setup'
+pop_name='traffic_signs'
+asset_file='road_signs.toml'
+asset_sel_type='range'
+asset_sel=[0,10]
+
+#### PERIODIC EVENTS ####
+
+[[Events.periodic.1]]
+type='EgoRand'
+func='place_along_road'
+distance=10
+
+[[Events.periodic.1]]
+type='VehicleRandStat'
+func='randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+
+[[Events.periodic.1]]
+type='VehicleRandStat'
+func='randomize_color'
+pop_name='traffic_vehicles'
+
+[[Events.periodic.1]]
+type='SignRand'
+func='randomize_position'
+pop_name='traffic_signs'
+region_center='ahead_ego'
+orientation='face_ego'
+
+[[Events.periodic.1]]
+type='PropStatic'
+func='randomize_position'
+pop_name='traffic_cones'
+offset=5

@@ -1,0 +1,14 @@
+# TODO: Consider removing need for static & dynamic vehicles to have separate toml specifications.
+# We know by convention there will to be a physx version and non-physx version.
+[Assets.VehicleRandDyn]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/bus_tour/2015/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/ambulance_emergency/2002/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/campervan/2019/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/truck_walkin/2020/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/semi_tractor_medium/2016/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/fuel_truck/2000/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/caravan/2015/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/tow_truck/2000/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/truck_paramedic/2014/main_with_physx.usd
+"""

@@ -1,0 +1,7 @@
+[Assets.VehicleRandDyn]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/tri/electric_citybike/2022/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/tri/electric_citybike02/2022/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/tri/electric_citybike03/2022/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/scooter_standup/2022/main_with_physx.usd
+"""

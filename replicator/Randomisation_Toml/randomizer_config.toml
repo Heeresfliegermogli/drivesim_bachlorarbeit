@@ -1,0 +1,76 @@
+# Replicator randomizer config example
+# See TOML specifications in docs
+
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "road_signs.toml",
+    "static_traffic_vehicles.toml",
+    "static_public_vehicles.toml",
+    "cones.toml",
+    "props_road_debris.toml"
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = false
+
+[[Events.setup]]
+type='WorldRand.weather'
+func='randomize_environment'
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='debris'
+asset_file='props_road_debris.toml'
+asset_sel_type='range'
+asset_sel=[0,7]
+
+[[Events.setup]]
+type = 'PropStatic'
+func= 'randomize_position'
+pop_name='debris'
+region_center='ahead_ego'
+
+
+[[Events.setup]]
+type= 'VehicleRandStat'
+func= 'setup'
+pop_name='traffic_vehicles'
+asset_file='static_traffic_vehicles.toml'
+asset_sel_type='index'
+asset_sel=[1,2]
+#No asset_sel_type means all assets included
+
+[[Events.setup]]
+type= 'VehicleRandStat'
+func= 'randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+
+#### PERIODIC EVENTS ####
+
+[[Events.periodic.20]]
+type='VehicleRandStat'
+func='randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+
+[[Events.periodic.20]]
+type='VehicleRandStat'
+func='randomize_color'
+pop_name='traffic_vehicles'
+
+[[Events.periodic.20]]
+type='PropStatic'
+func='randomize_position'
+pop_name='debris'
+offset=5

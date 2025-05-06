@@ -1,0 +1,24 @@
+# TODO: Consider removing need for static & dynamic vehicles to have separate toml specifications.
+# We know by convention there will to be a physx version and non-physx version.
+[Assets.VehicleRandDyn]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_electric/2018/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_fullsize_sedan/2017/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_fullsize_sedan/2018/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_hatchback/2013/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_sportscar/2015/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_sportscar/2017/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/pickup_crewsize/2016/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/pickup_crewsize/2019/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_compact/2017/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_compact/2019/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2015/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2015/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2019/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2019/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2016/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2016/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2018/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2018/main_with_physx.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2016_2/main_with_physx.usd
+"""

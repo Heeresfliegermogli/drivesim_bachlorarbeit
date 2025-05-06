@@ -1,0 +1,24 @@
+[fiftyone_config]
+# Modify this to change where the app runs. 
+# Tip: Set localhost to stop listening to connections from othet sources
+default_app_address = "0.0.0.0"
+
+[fiftyone_app_config]
+# Color information for fiftyone app
+color_by = "value"
+colorscale = "jet"
+
+[fiftyone_dataset_config]
+# Set a name for the dataset to avoid running post processing on the dataset multiple times. 
+# Default name is <foldername_writer>
+# persistent should be set to true for this to work
+# name = "some_memorable_name"
+persistent = false
+
+# [viz_config]
+# # Use the below list to get visualize bounding boxes of these classes only.
+# # filter_labels = ["automobile", "road_sign"]
+
+# # Remote GTs from the below list to omit them from the visualization
+# include_gts = ["bbox2d", "bbox3d", "segmentation"]
+

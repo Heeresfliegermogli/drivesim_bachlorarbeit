@@ -1,0 +1,34 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = false
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+pop_name='ego'
+asset_file='ego.toml'
+asset_sel_type='index'
+asset_sel=[0]
+
+# Testing Geofence 
+# Specify a rectangular (4 point) geofence and how many options you want in it
+# rel: wmnet/scenarios/no_ego/otto_wmnet_empty.usda
+rect_bounds=[[33,-1,5], [866,-1,11], [1088,1,50], [1358,1,60]]
+rect_bounds2=[[0,1,42], [16,1,189], [88,2,163], [16,-1,288]]
+
+num_options=100
+
+[[Events.setup]]
+type='EgoRand'
+func='set_pop_speed'
+pop_name='ego'
+speed=50

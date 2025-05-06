@@ -1,0 +1,39 @@
+[Assets.SignRand]
+parent = "Projects/dsready_content/nv_content/common_assets/props_poles/signpost_8ft/signpost_8ft.usd"
+children = """
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_5.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_10.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_20.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_30.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_40.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_50.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_60.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_70.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_80.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_90.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_100.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_110.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_120.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274_130.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_205.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_206.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_222.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_267.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__1_20.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__1_30.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__1_40.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__1_50.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__2_20.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__2_30.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__2_40.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_274__2_50.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_283.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1000_11.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1000_21.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1001_30.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1004_30.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1048_14.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1048_15.usd
+Projects/dsready_content/nv_content/germany/country_assets/country_signs/sign_1048_20.usd
+"""
+offset = [0, 0, 2]

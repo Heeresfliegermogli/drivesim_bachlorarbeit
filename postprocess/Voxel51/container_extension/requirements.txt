@@ -1,0 +1,9 @@
+# Requirements for SDG post-processing offline script.
+# TODO: Automate install of these outside of script
+opencv-python
+imageio
+pillow
+numpy
+toml
+fiftyone
+numpy-quaternion

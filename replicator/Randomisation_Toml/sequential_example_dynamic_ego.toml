@@ -1,0 +1,121 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "dynamic_twowheel_with_riders.toml",
+    "dynamic_traffic_vehicles.toml",
+    "dynamic_traffic_large_vehicles.toml",
+    "road_signs.toml",
+    "cones.toml",
+    "props_ncap.toml",
+    "props_road_debris.toml",
+    "props_traffic.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = false
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+pop_name='ego'
+asset_file='ego.toml'
+asset_sel_type='index'
+asset_sel=[0]
+
+[[Events.setup]]
+type= 'VehicleRandDyn'
+func= 'setup'
+pop_name='traffic_bikes'
+asset_file='dynamic_twowheel_with_riders.toml'
+asset_sel_type='range'
+asset_sel=[0,3]
+asset_mult=[1,2]
+total_count=3
+
+[[Events.setup]]
+type= 'VehicleRandDyn'
+func= 'setup'
+pop_name='traffic_vehicles'
+asset_file='dynamic_traffic_vehicles.toml'
+asset_sel_type='index'
+asset_sel=[0,1,2,3,4,5,6,7,8]
+
+[[Events.setup]]
+type= 'VehicleRandDyn'
+func= 'setup'
+pop_name='large_traffic_vehicles'
+asset_file='dynamic_traffic_large_vehicles.toml'
+asset_sel_type='index'
+asset_sel=[0,1,7]
+
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='my_debris'
+asset_file='props_road_debris.toml' 
+asset_sel_type='index'
+asset_sel=[0,1]
+asset_mult=[2,3]
+total_count=9
+
+## Sequential randomization is:
+## Load map -> do randomization -> play
+## Unlike non-sequential, no placement randomization occurs during simulation
+
+[[Events.setup]]
+type='EgoRand'
+func='set_pop_speed'
+pop_name='ego'
+speed=50
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+region_diameter=40
+shuffle_order=true
+min_distance=5
+offset=0
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_position'
+pop_name='large_traffic_vehicles'
+region_center='ahead_ego'
+region_diameter=40
+shuffle_order=true
+min_distance=5
+offset=0
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_speed'
+pop_name='traffic_vehicles'
+speed_range=[40, 45]
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_speed'
+pop_name='large_traffic_vehicles'
+speed_range=[40, 45]
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_color'
+pop_name='traffic_vehicles'
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_position'
+pop_name='traffic_bikes'
+region_center='ahead_ego'
+region_diameter=30
+shuffle_order=true
+offset=0
+min_distance=1

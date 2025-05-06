@@ -1,0 +1,10 @@
+[Assets.VehicleRandStat]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/bus_tour/2015/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/semi_tractor_medium/2016/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/fuel_truck/2000/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/caravan/2015/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/truck_walkin/2020/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/tow_truck/2000/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/campervan/2019/main.usd
+"""

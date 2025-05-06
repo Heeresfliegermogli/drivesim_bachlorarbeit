@@ -1,0 +1,23 @@
+[Assets.VehicleRandStat]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_electric/2018/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_fullsize_sedan/2017/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_fullsize_sedan/2018/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_hatchback/2013/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_sportscar/2015/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/car_sportscar/2017/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/pickup_crewsize/2016/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/pickup_crewsize/2019/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_compact/2017/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_compact/2019/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2015/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize/2019/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2016/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2018/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_midsize/2016_2/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv/2012/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv/2016/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv/2019/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/wagon/2014/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/passenger_van/2019/main.usd
+"""

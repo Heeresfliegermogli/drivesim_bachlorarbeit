@@ -1,0 +1,80 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "road_signs.toml",
+    "static_traffic_vehicles.toml",
+    "static_public_vehicles.toml",
+    "cones.toml",
+    "props_ncap.toml",
+    "props_road_debris.toml",
+    "props_traffic.toml",
+    "props_sidewalk.toml"
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 1 
+# Using periodic start counter to prevent back to back runs of randomize_environment
+# during transition from setup to runtime
+collisions_enabled = true
+enable_ego_teleportation = false
+
+
+# WEATHERRAND SETUP AND DEMO:
+# Setting up events can be done one of two ways:
+# If no preset_name is specified the Environment System defaults are populated
+[[Events.setup]]
+type='WorldRand.weather'
+func='setup'
+
+# Or if preset_name is specified, any existing preset name will be updated
+# with the parameters passed as arguments
+# WeatherRand setup define presets with 5 values in addition to preset_name:
+# azimuth:[0,360] elevation:[-20,?] cloudiness:[0.0,1.0],road_wetness:[0.0,1.0], fog:[0.0,1.0]
+# NOTE: Fog is only supported in PathTracing render mode
+
+[[Events.setup]]
+type='WorldRand.weather'
+func='setup'
+preset_name='dawn'
+azimuth=180
+elevation=-10
+cloudiness=0.50 
+road_wetness=0.5
+
+[[Events.setup]]
+type='WorldRand.weather'
+func='setup'
+preset_name='stormy_dusk'
+azimuth=360
+elevation=-10
+cloudiness=1.0 
+road_wetness=1
+
+# Once defined, presets or individual values can be used to apply weather changes.
+# NOTE: Environment changes must ONLY be made prior to simulation start. 
+# Changing weather during simulation is not officially supported, as visual artifacting may occur around the weather transition point. In some cases, the application could also crash.
+# Please make sure to only use ONE of the following four methods at any given time, otherwise undefined behavior may occur.
+
+# Randomize_environment selects from presets with a pseudorandom index
+[[Events.setup]]
+type='WorldRand.weather'
+func='randomize_environment'
+
+# 'set_environment' allows selecting a specific preset by name
+# [[Events.setup]]
+# type='WorldRand.weather'
+# func='set_environment'
+# preset_name='stormy_dusk'
+
+# 'next_preset', cycles to the next preset available, wrapping around when the preset dict end is reached
+# [[Events.setup]]
+# type='WorldRand.weather'
+# func='next_preset'
+
+# 'set_environment_values' allows you to directly modify the weather conditions without creating a specific preset
+# [[Events.setup]]
+# type='WorldRand.weather'
+# func='set_environment_values'
+# road_wetness=1

@@ -1,0 +1,78 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "dynamic_traffic_vehicles.toml",
+    "road_signs.toml",
+    "cones.toml",
+    "props_ncap.toml",
+    "props_road_debris.toml",
+    "props_traffic.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = false
+
+[[Events.setup]]
+type= 'VehicleRandDyn'
+func= 'setup'
+pop_name='traffic_vehicles'
+asset_file='dynamic_traffic_vehicles.toml'
+asset_sel_type='range'
+asset_sel=[0,12]
+
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='ncap_obstacles'
+asset_file='props_ncap.toml' 
+asset_sel_type='index'
+asset_sel=[0,2]
+total_count=10
+
+[[Events.setup]]
+type='PropStatic'
+func='randomize_position'
+pop_name='ncap_obstacles'
+region_center="ego"
+min_distance=5
+offset=50
+shuffle_order=true
+region_diameter=100
+surface_type=['median', 'sidewalk', 'shoulder']
+
+## Sequential randomization is:
+## Load map -> do randomization -> play
+## Unlike non-sequential, no placement randomization occurs during simulation
+
+[[Events.setup]]
+type='EgoRand'
+func='set_pop_speed'
+pop_name='ego'
+speed=50
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+region_diameter=80
+shuffle_order=true
+offset=0
+min_distance=10
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_color'
+pop_name='traffic_vehicles'
+
+[[Events.setup]]
+type='VehicleRandDyn'
+func='randomize_speed'
+pop_name='traffic_vehicles'
+speed_range=[40, 45]
+

@@ -1,0 +1,12 @@
+[Assets.PropStatic]
+objects = """
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_01_18in_dam/cone_safety_01_18in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_01_28in_dam/cone_safety_01_28in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_01_36in_dam/cone_safety_01_36in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_02_18in_dam/cone_safety_02_18in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_02_28in_dam/cone_safety_02_28in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_02_36in_dam/cone_safety_02_36in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_01_18in_dam/cone_safety_01_18in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/cone_safety_01_18in_dam/cone_safety_01_18in_dam.usd
+Projects/dsready_content/nv_content/common_assets/props_traffic/traffic_cone_01/traffic_cone_01.usd
+"""

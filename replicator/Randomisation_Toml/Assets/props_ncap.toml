@@ -1,0 +1,8 @@
+[Assets.PropStatic]
+objects = """
+/Projects/dsready_content/nv_content/common_assets/props_general/ncap_adult_walking_static/ncap_adult_walking_static.usd
+/Projects/dsready_content/nv_content/common_assets/props_general/ncap_bicycle/ncap_bicycle.usd
+/Projects/dsready_content/nv_content/common_assets/props_general/ncap_child_walking_static/ncap_child_walking_static.usd
+/Projects/dsready_content/nv_content/common_assets/props_general/ncap_motorcycle/ncap_motorcycle.usd
+/Projects/dsready_content/nv_content/common_assets/props_general/ncap_soft_car/ncap_soft_car.usd
+"""

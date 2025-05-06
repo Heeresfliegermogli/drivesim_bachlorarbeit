@@ -1,0 +1,86 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "road_signs.toml",
+    "static_traffic_vehicles.toml",
+    "static_public_vehicles.toml",
+    "static_oversize_vehicles.toml",
+    "cones.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = true
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+
+[[Events.setup]]
+type= 'VehicleRandStat'
+func= 'setup'
+pop_name='traffic_vehicles'
+asset_file='static_traffic_vehicles.toml'
+asset_sel_type='range'
+asset_sel=[0,10]
+
+[[Events.setup]]
+type= 'VehicleRandStat'
+func= 'setup'
+pop_name='oversize_vehicles'
+asset_file='static_oversize_vehicles.toml'
+asset_sel_type='range'
+asset_sel=[0,5]
+
+[[Events.setup]]
+type='SignRand'
+func='setup'
+pop_name='road_signs'
+asset_file='road_signs.toml'
+asset_sel_type='index'
+asset_sel=[3,14,15,16,17]
+
+#### PERIODIC EVENTS ####
+
+[[Events.periodic.1]]
+type='EgoRand'
+func='place_along_road'
+distance=5
+
+[[Events.periodic.1]]
+type='VehicleRandStat'
+func='randomize_position'
+pop_name='traffic_vehicles'
+region_center='ahead_ego'
+shuffle_order=true
+num_placements='random'
+
+[[Events.periodic.1]]
+type='VehicleRandStat'
+func='randomize_color'
+pop_name='traffic_vehicles'
+
+[[Events.periodic.1]]
+type='VehicleRandStat'
+func='randomize_position'
+pop_name='oversize_vehicles'
+region_center='ahead_ego'
+shuffle_order=true
+num_placements=2
+
+[[Events.periodic.1]]
+type='SignRand'
+func='randomize_position'
+pop_name='road_signs'
+region_center='ahead_ego'
+orientation='face_ego'
+min_distance=3
+# offset makes signs closer to ego
+offset=-4
+shuffle_order=true
+surface_type=['median', 'sidewalk']
+num_placements='random'

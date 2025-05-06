@@ -1,0 +1,8 @@
+path:  #path to the dataset
+train: images/train
+val: images/val
+test:  # optional
+names:
+  0: automobile
+  1: person
+  2: road_sign

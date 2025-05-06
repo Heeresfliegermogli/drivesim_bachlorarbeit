@@ -1,0 +1,7 @@
+[Assets.VehicleRandStat]
+objects = """
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/ambulance_emergency/2002/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_compact_police/2011/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/truck_paramedic/2014/main.usd
+Projects/dsready_content/nv_content/common_assets/vehicles/generic/suv_fullsize_police/2016/main.usd
+"""

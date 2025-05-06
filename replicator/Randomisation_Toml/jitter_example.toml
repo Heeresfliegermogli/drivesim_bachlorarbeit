@@ -1,0 +1,73 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",    
+    "static_traffic_vehicles.toml",    
+    "props_pallets.toml",    
+    "cones.toml",
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = true
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+
+# Create a population with 10 instances of a single pallet
+[[Events.setup]]
+type= 'PropStatic'
+func= 'setup'
+asset_file='props_pallets.toml'
+pop_name='pallet'
+asset_sel_type='index'
+asset_sel=[0]
+asset_mult=[10]
+
+# Create a population with many cones
+[[Events.setup]]
+type= 'PropStatic'
+func= 'setup'
+asset_file='cones.toml'
+pop_name='cones'
+asset_sel_type='index'
+asset_sel=[8]
+asset_mult=[20]
+
+#### PERIODIC EVENTS ####
+# Move ego along road
+[[Events.periodic.1]]
+type='EgoRand'
+func='place_along_road'
+distance=10
+
+# JITTER EXAMPLE
+# Note that rotation is specified only in degrees
+# Not all componenets (lateral, longitudinal, or rotation) 
+# need to be specified if not desired
+[[Events.periodic.1]]
+type= 'PropStatic'
+func= 'place_along_road'
+pop_name='pallet'
+distance=10
+offset=5
+lane_offset=1
+jitter.longitudinal=[-2,2]
+jitter.lateral=[-0.5,0.5]
+jitter.rotation=180
+
+# Example for jittering off-center of a lane.
+[[Events.periodic.1]]
+type= 'PropStatic'
+func= 'place_along_road'
+pop_name='cones'
+distance=5
+offset=5
+lane_offset=1
+jitter.longitudinal=[-1,1]
+jitter.lateral=[-2.0,-1.7]
+jitter.rotation=25

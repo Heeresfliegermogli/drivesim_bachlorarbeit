@@ -1,0 +1,146 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "road_signs.toml",
+    "static_traffic_vehicles.toml",
+    "static_public_vehicles.toml",
+    "cones.toml",
+    "props_ncap.toml",
+    "props_road_debris.toml",
+    "props_traffic.toml",
+    "props_sidewalk.toml"
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = true
+
+# MULTIPLE POPULATION SETUP:
+# By setting up the populations here, we link the pops and associated assets to a given randomizer.
+# Each randomizer type can support numerous named population instances.
+# If one wishes to add assets from multiple files to one population, simply add 'add_to_pop=true' to the additional setup commands.
+# An example with 'my_props' will be shown below.
+
+# We can provide 'asset_mult' to specify how many of each object
+# Then, we can use total_count is intended to pad out that sequence to fill the ct requested
+# For example, here we specify 3 of each two objects (subtotal of 6), which is then padded to become 10 total objects
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='my_cones' #  User specifies a population name
+asset_file='cones.toml' # Backend file the assets are located within
+asset_sel_type='index'
+asset_sel=[0,1]
+asset_mult=3
+total_count=10
+
+# asset_mult takes either a single integer (for all assets), or an array of length equal to # of assets.
+# Here we specify qtys 2 and 3 for asset indices 0 and 1, respectively.
+# Thus, the subsequence will be asset indices [0,0,1,1,1]
+# This is padded to 9 and asset qty becomes [4,5]
+# NOTE: One can use asset_mult to specify a particular distribution of assets,
+# however, if using a total_count param that does not allow for that distribution to be fulfilled,
+# that distribution may be altered.
+# For example, "total_count=8" would give us [4,4] resulting in a 50-50 distributon instead of what was specified.
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='my_debris'
+asset_file='props_road_debris.toml' 
+asset_sel_type='index'
+asset_sel=[0,1]
+asset_mult=[2,3]
+total_count=9
+
+# total_count can also be used to limit the number of objects regardless of the asset_mult specified,
+# though this is not recommended as the implementation may change
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='my_ncap'
+asset_file='props_ncap.toml' 
+asset_sel_type='range'
+asset_sel=[0,2]
+asset_mult=[2,2,2]
+total_count=5
+
+# MULTI-FILE POPULATIONS
+# Here we start a multi-file pop, with asset qty 1 of a cone
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='my_props'
+asset_file='cones.toml' 
+asset_sel_type='index'
+asset_sel=[2]
+asset_mult=1
+
+# We add 2 ncap children to population here using 'add_to_pop=true'
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+add_to_pop=true
+pop_name='my_props'
+asset_file='props_ncap.toml' 
+asset_sel_type='index'
+asset_sel=[2]
+asset_mult=2
+
+# Add 6 grocery bags
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+add_to_pop=true
+pop_name='my_props'
+asset_file='props_road_debris.toml' 
+asset_sel_type='index'
+asset_sel=[3]
+total_count=6
+
+# FOR MULTI-POP EVENTS
+# To specify which population to execute a randomizer method for, pop_name must be specified.
+# If no pop_name is specified, the (non-setup) method will operate on all populations assigned to that randomizer. 
+        
+[[Events.periodic.5]]
+type='PropStatic'
+func='place_along_road'
+pop_name='my_cones'
+distance=1
+lane_offset=-1
+offset=5
+jitter.lateral=[-0.5,1.0]
+jitter.rotation=180
+
+[[Events.periodic.5]]
+type='PropStatic'
+func='place_along_road'
+pop_name='my_debris'
+distance=1
+lane_offset=0
+offset=7
+jitter.lateral=[-0.7,0.7]
+jitter.rotation=180
+
+[[Events.periodic.5]]
+type='PropStatic'
+func='place_along_road'
+pop_name='my_ncap'
+distance=5
+lane_offset=0
+offset=15
+jitter.lateral=[-1,1]
+jitter.rotation=180
+
+[[Events.periodic.5]]
+type='PropStatic'
+func='place_along_road'
+pop_name='my_props'
+distance=3
+lane_offset=1
+offset=5
+jitter.lateral=[0,1]
+jitter.rotation=180

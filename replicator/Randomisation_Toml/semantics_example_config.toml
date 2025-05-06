@@ -1,0 +1,36 @@
+[Assets]
+root = "{/app/drivesim/defaultNucleusRoot}/"
+sets = [
+    "ego.toml",
+    "props_road_debris.toml"
+]
+
+[Events.config]
+enable_script = true
+enable_periodic = true
+periodic_start_frame = 0
+collisions_enabled = true
+enable_ego_teleportation = false
+
+[[Events.setup]]
+type='EgoRand'
+func='setup'
+
+[[Events.setup]]
+type='PropStatic'
+func='setup'
+pop_name='debris'
+asset_file='props_road_debris.toml'
+asset_sel_type='range'
+asset_sel=[0,5]
+# The assets will be labeled with the following semantic tags when spawned.
+semantics='class:hazard, other:road_debris'
+
+#### PERIODIC EVENTS ####
+
+[[Events.periodic.1]]
+type='PropStatic'
+func='randomize_position'
+pop_name='debris'
+region_center='ahead_ego'
+offset=5
