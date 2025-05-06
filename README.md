@@ -76,7 +76,7 @@ Die Evaluation erfolgte in mehreren Schritten:
 ## 📋 Voraussetzungen
 
 - NVIDIA DriveSim (Container)
-- Voxel51 + FiftyOne
+- Voxel51 
 - Python 3.11+
 - Ultralytics YOLOv11
 
